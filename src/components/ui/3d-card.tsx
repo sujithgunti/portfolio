@@ -6,8 +6,7 @@ import React, {
   useState,
   useContext,
   useRef,
-  useEffect,
-} from "react";
+  } from "react";
 
 const MouseEnterContext = createContext<{
   mouseEnter: boolean;
@@ -16,6 +15,11 @@ const MouseEnterContext = createContext<{
   mouseEnter: false,
   setMouseEnter: () => {},
 });
+
+type CardItemProps = {
+  style?: React.CSSProperties;
+  className?: string;
+} & React.HTMLAttributes<HTMLElement>;
 
 export const CardContainer = ({
   children,
@@ -40,11 +44,11 @@ export const CardContainer = ({
     setPosition({ x, y });
   };
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseEnter = () => {
     setMouseEnter(true);
   };
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseLeave = () => {
     setMouseEnter(false);
     setPosition({ x: 0, y: 0 });
   };
@@ -110,7 +114,7 @@ export const CardItem = ({
   rotateZ = 0,
   ...rest
 }: {
-  as?: any;
+  as?: keyof React.JSX.IntrinsicElements | React.ComponentType<CardItemProps>;
   children: React.ReactNode;
   className?: string;
   translateX?: number | string;

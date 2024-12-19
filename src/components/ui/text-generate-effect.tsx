@@ -17,7 +17,7 @@ export const TextGenerateEffect = ({
   repeat?: boolean;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ");
+  const wordsArray = words.split(" ");
   const [key, setKey] = useState(0);
 
   const animateText = async () => {

@@ -109,7 +109,7 @@ export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white font-montserrat">
-        Hi, I'm <br /> 
+        Hi, I&apos;m <br />
         <TextGenerateEffect
           words="SUJITH GUNTI"
           className="text-2xl md:text-7xl font-bold dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500"

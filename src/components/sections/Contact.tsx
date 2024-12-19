@@ -37,6 +37,7 @@ export const Contact = () => {
       setSubmitStatus('success');
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
+      console.log(error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

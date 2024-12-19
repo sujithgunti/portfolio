@@ -53,7 +53,9 @@ const skillIcons = {
     "Express JS": <SiExpress className="w-full h-full text-yellow-400" />,
   },
 };
-
+interface IconsMap {
+  [key: string]: React.ReactNode;
+}
 export const Skills = () => {
   const fadeInUp = {
     initial: { y: 50, opacity: 0 },
@@ -61,7 +63,7 @@ export const Skills = () => {
     transition: { duration: 0.5 }
   };
 
-  const SkillCard = ({ title, skills, icons }: { title: string, skills: string[], icons: any }) => (
+  const SkillCard = ({ title, skills, icons }: { title: string, skills: string[], icons: IconsMap }) => (
   <CardContainer className="w-full">
     <CardBody className="relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-[400px] rounded-xl p-6 border flex flex-col items-center justify-center">
       <CardItem
